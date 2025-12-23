@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Filter Range</title>
+</head>
+
+<body>
+  <h1>Filter Range</h1>
+
+  <script>
+    function filterRange(array, a, b) {
+      let filter = array.filter( (num) => {
+        if (num >= a) {
+          if (num <= b) return true;
+        }
+      });
+      return filter;
+    }
+
+    let arr = [5, 3, 8, 1];
+
+    let filtered = filterRange(arr, 1, 4);
+    //
+    console.log( filtered ); // 3,1 (matching values)
+    //
+    console.log( arr ); // 5,3,8,1 (not modified)
+
+  </script>
+</body>
+
+</html> 

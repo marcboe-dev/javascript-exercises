@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Filter range "in place"</title>
+</head>
+
+<body>
+  <h1>Filter range "in place"</h1>
+
+  <script>
+    function filterRangeInPlace(array, a, b) {
+      for (let i= 0; i < array.length; i++) {
+        if ( array[i] < a || array[i] > b) {
+          array.splice(i, 1);
+          i--;
+        }
+      }
+    }
+
+    // --- Authors solution --- //
+    // function filterRangeInPlace(arr, a, b) {
+    //
+    //   for (let i = 0; i < arr.length; i++) {
+    //     let val = arr[i];
+    //
+    //     // remove if outside of the interval
+    //     if (val < a || val > b) {
+    //       arr.splice(i, 1);
+    //       i--;
+    //     }
+    //   }
+    //
+    // }
+    // --- Authors solution --- //
+
+    let arr = [0, 0, 3, 5, 5];
+
+    filterRangeInPlace(arr, 1, 4); // removed the numbers except from 1 to 4
+
+    console.log( arr ); // [3, 1]
+
+  </script>
+</body>
+
+</html> 

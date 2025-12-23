@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sort in decreasing order</title>
+</head>
+
+<body>
+  <h1>Sort in decreasing order</h1>
+
+  <script>
+    // ## Sort in decreasing order
+
+    let arr = [5, 2, 1, -10, 8];
+
+    // pseudocode:
+    // cache element2
+    // delete element2 from array
+    // paste element2 before element1 in array
+
+
+    // we want to take item from pos1 and put it on pos2
+    function swap (array, pos1, pos2) {
+      // cache number at pos1
+      let temp = array.slice(pos2, pos2 + 1);
+      // remove one element at pos2
+      array.splice(pos2, 1);
+      // add element2 before element 1;
+      // remove 0 elements before pos1, and insert temp
+      array.splice(pos1, 0, temp[0]);
+    }
+
+    for ( let i = 0; i < arr.length - 1; i++) {
+      for (let j = 0; j < arr.length - 1 - i; j++) {
+        if ( arr[j] < arr[j + 1] ) {
+          swap( arr, j, j+1);
+        }
+      }
+    }
+
+    console.log( arr ); // 8, 5, 2, 1, -10
+    
+
+  </script>
+</body>
+
+</html> 

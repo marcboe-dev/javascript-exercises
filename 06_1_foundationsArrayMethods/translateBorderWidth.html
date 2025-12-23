@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Translate border-left-width to borderLeftWidth</title>
+</head>
+
+<body>
+  <h1>Translate border-left-width to borderLeftWidth</h1>
+
+  <script>
+
+    function camelize(str) {
+      const words = str.split("-");
+      let upperSplit = "";
+      for (let i = 1; i < words.length; i++) {
+        upperSplit += words[i].at(0).toUpperCase() + words[i].slice(1);
+      }
+      const newWord = words[0] + upperSplit; 
+      return newWord;
+    }
+
+    console.log( camelize ("list-style-image") );
+    console.log( camelize ("-webkit-transition") );
+
+  </script>
+</body>
+
+</html> 
