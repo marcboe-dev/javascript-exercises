@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Filter unique array members</title>
+</head>
+
+<body>
+  <h1>Filter unique array members</h1>
+
+  <script>
+
+    // Pseudocode:
+    // copy the current array in an array called unique;
+    // sort the array
+    // FOR EACH ITEM:
+    // compare if the next item is equal to the current item
+    // IF YES: 
+    //delete the next item
+    // set the counter variable -1, so it stays with the "unique"-item, that you want to compare to the others ( if you left this step out, and there were several repeating items in a row, then )
+    // ELSE: go on with the loop (and leave the)
+
+    function unique(arr) {
+      let unique = arr.sort();
+      for (let i=0; i < unique.length - 1; i++) {
+        if (unique[i] === unique[i+1]){
+          //at index i+1, delete 1 item
+          unique.splice(i+1, 1);
+          i--;
+        }
+      }
+      return unique;
+    }
+
+
+    let strings = ["Hare", "Krishna", "Hare", "Krishna",
+      "Krishna", "Krishna", "Hare", "Hare", ":-O"
+    ];
+
+    console.log(unique(strings)); // Hare, Krishna, :-O
+    console.log (strings);
+
+  </script>
+</body>
+
+</html> 

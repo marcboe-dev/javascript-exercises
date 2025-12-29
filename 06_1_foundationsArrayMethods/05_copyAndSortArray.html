@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Copy and sort array</title>
+</head>
+
+<body>
+  <h1>Copy and sort array</h1>
+
+  <script>
+
+    function copySorted(array) {
+      let sorted = array.toSorted();
+      return sorted;
+    }
+
+    let arr = ["HTML", "JavaScript", "CSS"];
+
+    let sorted = copySorted(arr);
+
+    console.log( sorted ); // CSS, HTML, JavaScript
+    console.log( arr ); // HTML, JavaScript, CSS (no changes)
+
+  </script>
+</body>
+
+</html> 
